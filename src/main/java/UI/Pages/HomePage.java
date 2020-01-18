@@ -29,5 +29,6 @@ public class HomePage extends BaseSetUp {
 
     public boolean validateTitlePage() {
         return pageLogo.isDisplayed();
+
     }
 }
