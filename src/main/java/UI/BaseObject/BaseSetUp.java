@@ -3,7 +3,10 @@ package UI.BaseObject;
 import UI.TestUtil.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -24,14 +27,9 @@ public class BaseSetUp {
     public BaseSetUp() {
         try {
 
-            InputStream fl = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/config.properties");
+            InputStream fl = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/UI/config/config.properties");
             pro = new Properties();
             pro.load(fl);
-
-            System.out.println(pro.getProperty("url"));
-            System.out.println(pro.getProperty("name"));
-            System.out.println(pro.getProperty("password"));
-            System.out.println(pro.getProperty("email"));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -48,6 +46,13 @@ public class BaseSetUp {
        if(bwrName.equals("chrome")) {
 
            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/drivers/chrome/chromedriver");
+           DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+           capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+
+           ChromeOptions options = new ChromeOptions();
+           options.addArguments("start-maximized"); // open Browser in maximized mode
+           capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
            dr = new ChromeDriver();
 
 

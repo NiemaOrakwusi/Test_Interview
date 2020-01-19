@@ -42,13 +42,15 @@ public class AddUserPage extends BaseSetUp {
         userBtn.click();
     }
 
-    public boolean validateTitlePage() {
+    public boolean validateNewUserLogo() {
         return pageLogo.isDisplayed();
     }
 
-    public void UserInfo(String un, String pwd) {
+    public void UserInfo(String un, String pw, String em) {
+
         userName.sendKeys(un);
-        userPassword.sendKeys(pwd);
+        userPassword.sendKeys(pw);
+        userEmail.sendKeys(em);
         userSubmit.click();
 
     }

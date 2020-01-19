@@ -3,7 +3,8 @@
 <suite name="UISuite">
     <test name="Interview Test">
         <classes>
-            <class name="UI.tests.TestProject"></class>
+            <class name="UI.tests.AddUserTest"></class>
+            <class name="UI.tests.FilterUserTest"></class>
         </classes>
     </test>
 </suite> <!-- Suite -->

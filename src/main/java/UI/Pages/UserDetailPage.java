@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class UserTestPage  extends BaseSetUp {
+public class UserDetailPage extends BaseSetUp {
 
     @FindBy(xpath = "/html/body/div/div[4]/div[2]/div[1]/div/div/table/tbody/tr[1]/td")
     WebElement newUserLabel;
@@ -20,18 +20,28 @@ public class UserTestPage  extends BaseSetUp {
     WebElement pageLogo;
 
 
-    public UserTestPage() {
+    public UserDetailPage() {
         PageFactory.initElements(dr, this);
     }
 
-    public String validatePageTitle() {
-        return dr.getTitle();
+    public String validateNewUserDetailTitle() {
+        return pageLogo.getText();
+
     }
-    public void UserClick(){
+
+    public void UserDetailClick(){
         userBtn.click();
     }
 
-    public boolean validateTitlePage() {
+    public boolean validateTitleLogo() {
         return pageLogo.isDisplayed();
+    }
+
+    public String validateNewUserName(){
+        return newUserLabel.getText();
+    }
+
+    public String validateNewUseEmail(){
+        return newEmailLabel.getText();
     }
 }

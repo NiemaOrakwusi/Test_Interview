@@ -20,15 +20,18 @@ public class HomePage extends BaseSetUp {
         PageFactory.initElements(dr, this);
     }
 
-    public String validatePageTitle() {
+    public String validateHomePageTitle() {
         return dr.getTitle();
     }
-    public void UserClick(){
+
+    public void homePageUserClick(){
         userBtn.click();
     }
 
-    public boolean validateTitlePage() {
+    public boolean homePageLogo() {
         return pageLogo.isDisplayed();
 
     }
+
+
 }

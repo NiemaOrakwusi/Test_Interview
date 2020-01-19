@@ -3,14 +3,14 @@
 <suite name="Failed suite [UISuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Interview Test(failed)">
     <classes>
-      <class name="UI.tests.TestProject">
+      <class name="UI.tests.AddUserTest">
         <methods>
           <include name="init"/>
           <include name="AddUserTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- UI.tests.TestProject -->
+      </class> <!-- UI.tests.AddUserTest -->
     </classes>
   </test> <!-- Interview Test(failed) -->
 </suite> <!-- Failed suite [UISuite] -->

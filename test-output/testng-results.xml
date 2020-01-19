@@ -1,29 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
+    <line>
+      <![CDATA[Validate Home Title]]>
+    </line>
+    <line>
+      <![CDATA[Click User]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate Logo is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Click New User]]>
+    </line>
+    <line>
+      <![CDATA[Validate Add User Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate Logo is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Enter Info]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Name Detail Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Info Panel Name]]>
+    </line>
+    <line>
+      <![CDATA[Validate Email Info Panel Email]]>
+    </line>
   </reporter-output>
-  <suite started-at="2020-01-18T11:45:05Z" name="UISuite" finished-at="2020-01-18T11:45:06Z" duration-ms="623">
+  <suite name="Default Suite" duration-ms="55853" started-at="2020-01-19T00:40:56Z" finished-at="2020-01-19T00:41:52Z">
     <groups>
     </groups>
-    <test started-at="2020-01-18T11:45:05Z" name="Interview Test" finished-at="2020-01-18T11:45:06Z" duration-ms="623">
-      <class name="UI.tests.TestProject">
-        <test-method is-config="true" signature="init()[pri:0, instance:UI.tests.TestProject@5fdcaa40]" started-at="2020-01-18T11:44:32Z" name="init" finished-at="2020-01-18T11:44:49Z" duration-ms="16299" status="PASS">
+    <test name="Test_Project" duration-ms="55853" started-at="2020-01-19T00:40:56Z" finished-at="2020-01-19T00:41:52Z">
+      <class name="UI.tests.AddUserTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:UI.tests.AddUserTest@366e2eef]" name="init" is-config="true" duration-ms="99210" started-at="2020-01-19T00:38:12Z" finished-at="2020-01-19T00:39:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:UI.tests.TestProject@5fdcaa40]" started-at="2020-01-18T11:44:49Z" name="setUp" finished-at="2020-01-18T11:45:05Z" depends-on-methods="UI.BaseObject.BaseSetUp.init" duration-ms="16687" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:UI.tests.AddUserTest@366e2eef]" name="setUp" is-config="true" duration-ms="65193" started-at="2020-01-19T00:39:51Z" depends-on-methods="UI.BaseObject.BaseSetUp.init" finished-at="2020-01-19T00:40:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="AddUserTest()[pri:0, instance:UI.tests.TestProject@5fdcaa40]" started-at="2020-01-18T11:45:05Z" name="AddUserTest" finished-at="2020-01-18T11:45:06Z" duration-ms="595" status="PASS">
+        <test-method status="PASS" signature="AddUserTest()[pri:0, instance:UI.tests.AddUserTest@366e2eef]" name="AddUserTest" duration-ms="7509" started-at="2020-01-19T00:41:45Z" finished-at="2020-01-19T00:41:52Z">
           <reporter-output>
+            <line>
+              <![CDATA[Validate Home Title]]>
+            </line>
+            <line>
+              <![CDATA[Click User]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate Logo is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Click New User]]>
+            </line>
+            <line>
+              <![CDATA[Validate Add User Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate Logo is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Enter Info]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Name Detail Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Info Panel Name]]>
+            </line>
+            <line>
+              <![CDATA[Validate Email Info Panel Email]]>
+            </line>
           </reporter-output>
         </test-method> <!-- AddUserTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:UI.tests.TestProject@5fdcaa40]" started-at="2020-01-18T11:45:06Z" name="tearDown" finished-at="2020-01-18T11:45:06Z" duration-ms="99" status="PASS">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:UI.tests.AddUserTest@366e2eef]" name="tearDown" is-config="true" duration-ms="264" started-at="2020-01-19T00:41:55Z" finished-at="2020-01-19T00:41:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- UI.tests.TestProject -->
-    </test> <!-- Interview Test -->
-  </suite> <!-- UISuite -->
+      </class> <!-- UI.tests.AddUserTest -->
+    </test> <!-- Test_Project -->
+  </suite> <!-- Default Suite -->
 </testng-results>
