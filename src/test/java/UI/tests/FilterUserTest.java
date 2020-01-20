@@ -31,9 +31,10 @@ public class FilterUserTest extends BaseSetUp {
     UserPageHome userPageHome;
     UserDetailPage userDetailPage;
     DateTimeFormatter dsa = DateTimeFormatter.ofPattern("YYYYMMDD");
-    String dt1 = "20200115";
-    String dt2 = "20200120";
-    //LocalDate dt2 = 20200120; //LocalDate.now().plusDays(1);
+    LocalDate dt1 = LocalDate.now();
+    String dts = dt1.minusDays(10).toString();
+    LocalDate dt2 = LocalDate.now();
+    String dtg = dt2.plusDays(2).toString();
 
 
 
@@ -73,7 +74,7 @@ public class FilterUserTest extends BaseSetUp {
         Reporter.log("Validate User Title");
         userPageHome.validateUserPageLogo();
         Reporter.log("Validate Logo is displayed");
-        userPageHome.UserInfo(pro.getProperty("name"), pro.getProperty("email"),  dt1, dt2); //dsa.format(dt2).toString());
+        userPageHome.UserInfo( pro.getProperty("name"), pro.getProperty("email"),dts, dtg);
         Reporter.log("Enter Filter Details and Dates");
         String NewUser = userPageHome.validateResultsUN();
         Assert.assertEquals(NewUser, pro.getProperty("name"));

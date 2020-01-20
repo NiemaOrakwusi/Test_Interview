@@ -1,31 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[Validated Status Code for PUT]]>
+      <![CDATA[Validate Home Title]]>
+    </line>
+    <line>
+      <![CDATA[Click User]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate Logo is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Enter Filter Details and Dates]]>
+    </line>
+    <line>
+      <![CDATA[Validate UserName]]>
+    </line>
+    <line>
+      <![CDATA[Validate Email]]>
     </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="31458" started-at="2020-01-20T05:03:32Z" finished-at="2020-01-20T05:04:04Z">
+  <suite name="Default Suite" duration-ms="31836" started-at="2020-01-20T06:48:24Z" finished-at="2020-01-20T06:48:56Z">
     <groups>
     </groups>
-    <test name="Test_Interview" duration-ms="31458" started-at="2020-01-20T05:03:32Z" finished-at="2020-01-20T05:04:04Z">
-      <class name="Service.apiTest">
-        <test-method status="PASS" signature="getData()[pri:0, instance:Service.apiTest@2d3fcdbd]" name="getData" is-config="true" duration-ms="786" started-at="2020-01-20T05:04:01Z" finished-at="2020-01-20T05:04:02Z">
+    <test name="Test_Interview" duration-ms="31836" started-at="2020-01-20T06:48:24Z" finished-at="2020-01-20T06:48:56Z">
+      <class name="UI.tests.FilterUserTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="init" is-config="true" duration-ms="53751" started-at="2020-01-20T06:47:30Z" finished-at="2020-01-20T06:48:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getData -->
-        <test-method status="PASS" signature="PutUserInfo()[pri:0, instance:Service.apiTest@2d3fcdbd]" name="PutUserInfo" duration-ms="1989" started-at="2020-01-20T05:04:02Z" description="PUT User Info into /comments" finished-at="2020-01-20T05:04:04Z">
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="setUp" is-config="true" duration-ms="26635" started-at="2020-01-20T06:48:27Z" finished-at="2020-01-20T06:48:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="FilterUserTest()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="FilterUserTest" duration-ms="2615" started-at="2020-01-20T06:48:53Z" description="Search for New Created User on User Page" finished-at="2020-01-20T06:48:56Z">
           <reporter-output>
             <line>
-              <![CDATA[Validated Status Code for PUT]]>
+              <![CDATA[Validate Home Title]]>
+            </line>
+            <line>
+              <![CDATA[Click User]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate Logo is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Enter Filter Details and Dates]]>
+            </line>
+            <line>
+              <![CDATA[Validate UserName]]>
+            </line>
+            <line>
+              <![CDATA[Validate Email]]>
             </line>
           </reporter-output>
-        </test-method> <!-- PutUserInfo -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Service.apiTest@2d3fcdbd]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-01-20T05:04:04Z" finished-at="2020-01-20T05:04:04Z">
+        </test-method> <!-- FilterUserTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="tearDown" is-config="true" duration-ms="107" started-at="2020-01-20T06:48:56Z" finished-at="2020-01-20T06:48:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Service.apiTest -->
+      </class> <!-- UI.tests.FilterUserTest -->
     </test> <!-- Test_Interview -->
   </suite> <!-- Default Suite -->
 </testng-results>

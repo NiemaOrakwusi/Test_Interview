@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="Test_Interview(failed)">
     <classes>
-      <class name="Service.apiTest">
+      <class name="UI.tests.FilterUserTest">
         <methods>
-          <include name="PutUserInfo"/>
+          <include name="init"/>
+          <include name="FilterUserTest"/>
           <include name="tearDown"/>
-          <include name="getData"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- Service.apiTest -->
+      </class> <!-- UI.tests.FilterUserTest -->
     </classes>
   </test> <!-- Test_Interview(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
