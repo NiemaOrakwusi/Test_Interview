@@ -26,7 +26,7 @@ public class AddUserTest extends BaseSetUp  {
        super();
     } // End of Object
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() {
         init();
         addUserPage = new AddUserPage();
@@ -35,7 +35,7 @@ public class AddUserTest extends BaseSetUp  {
         userDetailPage = new UserDetailPage();
     } // End of Setup
 
-    @AfterSuite
+    @AfterMethod
     //End the Suite
     public void tearDown() {
         if(null != dr) {

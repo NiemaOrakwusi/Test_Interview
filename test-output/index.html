@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="UI.tests.AddUserTest" hash-for-method="AddUserTest">AddUserTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="Service.apiTest" hash-for-method="PostNewUser">PostNewUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -120,14 +120,14 @@
           <div class="suite-Default_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">UI.tests.AddUserTest</span>
+              <span class="class-name">Service.apiTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddUserTest">
-                  </a> <!-- AddUserTest -->
-                  <span class="method-name">AddUserTest</span>
+                  <a name="PostNewUser">
+                  </a> <!-- PostNewUser -->
+                  <span class="method-name">PostNewUser</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -142,11 +142,15 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test_Project&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test_Interview&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;UI.tests.AddUserTest&quot;/&gt;
+      &lt;class name=&quot;Service.apiTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;PostNewUser&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- Service.apiTest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test_Project --&gt;
+  &lt;/test&gt; &lt;!-- Test_Interview --&gt;
 &lt;/suite&gt; &lt;!-- Default Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +162,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test_Project (1 class)</span>
+                <span class="test-name">Test_Interview (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,14 +190,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AddUserTest')
-data.setCell(0, 2, 'UI.tests.AddUserTest')
-data.setCell(0, 3, 7509);
+data.setCell(0, 1, 'PostNewUser')
+data.setCell(0, 2, 'Service.apiTest')
+data.setCell(0, 3, 2348);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -204,29 +208,22 @@ return data;
             <span class="header-content">Reporter output for Default Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">AddUserTest</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Validate Home Title</span>
-                <span class="reporter-method-output">Click User</span>
-                <span class="reporter-method-output">Validate User Title</span>
-                <span class="reporter-method-output">Validate Logo is displayed</span>
-                <span class="reporter-method-output">Click New User</span>
-                <span class="reporter-method-output">Validate Add User Title</span>
-                <span class="reporter-method-output">Validate Logo is Displayed</span>
-                <span class="reporter-method-output">Enter Info</span>
-                <span class="reporter-method-output">Validate User Name Detail Title</span>
-                <span class="reporter-method-output">Validate User Info Panel Name</span>
-                <span class="reporter-method-output">Validate Email Info Panel Email</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Service.apiTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">PutUserInfo</span>
+                <br/>
+                <span class="ignored-method-name">GetPostsResponse</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_Suite" class="panel">
@@ -235,23 +232,15 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">UI.tests.AddUserTest</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">init</span>
+              <div class="chronological-class-name">Service.apiTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">getData</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="configuration-suite before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">99211 ms</span>
-              </div> <!-- configuration-suite before -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">AddUserTest</span>
-                <span class="method-start">212745 ms</span>
+                <span class="method-name">PostNewUser</span>
+                <span class="method-start">782 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">222600 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

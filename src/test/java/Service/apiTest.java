@@ -1,90 +1,86 @@
 package Service;
 
-
-
 import Service.Base.BaseApi;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
-import org.json.JSONObject;
+import com.google.gson.JsonObject;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import static io.restassured.RestAssured.given;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+
 
 public class apiTest extends BaseApi {
 
-    @Test
-    public void PostNewUserResponse()
-    {
+    @BeforeMethod
+    public void getData() throws IOException {
+        RestAssured.reset();
         RestAssured.baseURI = proAPI.getProperty("URL");
-        RequestSpecification request = RestAssured.given();
+        RestAssured.port = 3030;
 
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("id", proAPI.getProperty("postid"));
-        Reporter.log("POST ID");
-        requestParams.put("name", proAPI.getProperty("postName"));
-        Reporter.log("POST Name");
-        requestParams.put("UserName", proAPI.getProperty("postUserName"));
-        Reporter.log("POST UserName");
-        requestParams.put("email", proAPI.getProperty("postEmail"));
-        Reporter.log("POST Email");
-        requestParams.put("address",  proAPI.getProperty("postAddress"));
-        Reporter.log("POST Address");
-        requestParams.put("suite",  proAPI.getProperty("postSuite"));
-        Reporter.log("POST Suite");
-        requestParams.put("city",  proAPI.getProperty("postCity"));
-        Reporter.log("POST City");
-        requestParams.put("zip",  proAPI.getProperty("postZip"));
-        Reporter.log("POST Zip");
-        requestParams.put("geo",  proAPI.getProperty("postGeo"));
-        Reporter.log("POST geo");
-        requestParams.put("lat",  proAPI.getProperty("postLat"));
-        Reporter.log("POST lat");
-        requestParams.put("lng",  proAPI.getProperty("postLng"));
-        Reporter.log("POST lng");
+    }
 
-        request.body(requestParams.toString());//toJSONString());
-        Response response = request.post("/users");
+    @Test
 
-        int statusCode = response.getStatusCode();
-        Assert.assertEquals(statusCode, Integer.parseInt(proAPI.getProperty("PostStatusCode")));
-        String successCode = response.jsonPath().get("SuccessCode");
-        Assert.assertEquals( "Correct Success code was returned", successCode, "OPERATION_SUCCESS");
-        Reporter.log("Validate POST was Successful with Status Code");
+    public void PostNewUser() throws IOException {
+        given()
+                    .body("{"
+                            + "\'userId\': 77,"
+                            + "\'id\': 37743,"
+                            + "\'name\': \'Niema Orakwusi\',"
+                            + "\'username\': \'niemaorakwusi\'"
+                            + "\'email\': \'niemaorakwusi@gmail.com\'"
+                            + "\'address\': \'123 School Street\'"
+                            + "\'suite\': \'forever 1\'"
+                            + "\'city\': \'Atlanta\'"
+                            + "\'zip\': \'30346\'"
+                            + "\'geo\': \'{\'"
+                            + "\'lat\': \'33.7490\'"
+                            + "\'lng\': \'84.3880\'"
+                            + "}"
+                    )
+                    .when().log().ifValidationFails()
+                    .request("POST", "/posts").
+                    then()
+                    .statusCode(201).assertThat();
+        Reporter.log("Validated Status Code for POST");
     }
     @Test
     public void PutUserInfo() {
-
-
-        RestAssured.baseURI = proAPI.getProperty("URL");
-        RequestSpecification request = RestAssured.given();
-
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("id", proAPI.getProperty("putId"));
-        Reporter.log("PUT ID");
-        requestParams.put("name", proAPI.getProperty("putName"));
-        Reporter.log("PUT name");
-        requestParams.put("email", proAPI.getProperty("putEmail"));
-        Reporter.log("PUT email");
-        requestParams.put("body", proAPI.getProperty("putBody"));
-        Reporter.log("PUT body");
-
-        request.body(requestParams.toString());
-        Response response = request.put("/comments/" + proAPI.getProperty("putPostId"));
-
-        int statusCode = response.getStatusCode();
-        System.out.println(response.asString());
-        Assert.assertEquals(statusCode, Integer.parseInt(proAPI.getProperty("PutStatusCode")));
-        Reporter.log("Validate PUT was Successful with Status Code ");
-    }
+        given()
+                .body("{"
+                        + "\'userId\': 1234,"
+                        + "\'id\': 783737,"
+                        + "\'title\': \'Post Updates\',"
+                        + "\'body\': \'Niema's Inserts\'"
+                        + "}"
+                )
+                .when().log().ifValidationFails()
+                .request("PUT", "/comments").
+                then()
+                .statusCode(201).assertThat();
+        Reporter.log("Validated Status Code for PUT");
+     }
     @Test
-    public void GetPostsResponse()
+    public void GetResponse()
     {
         RestAssured.baseURI = proAPI.getProperty("URL");
         RequestSpecification httpRequest = RestAssured.given();
-        Response response = httpRequest.get("/posts/" + proAPI.getProperty("getId"));
+        Response response = httpRequest.get("/users/" + proAPI.getProperty("getId"));
         ResponseBody body = response.getBody();
         System.out.println("Response Body is: " + body.asString());
         String bodyAsString = body.asString();

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [UISuite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Interview Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [UISuite]">
+  <test thread-count="5" name="API(failed)">
     <classes>
-      <class name="UI.tests.AddUserTest">
+      <class name="Service.apiTest">
         <methods>
-          <include name="init"/>
-          <include name="AddUserTest"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="PutUserInfo"/>
+          <include name="PostNewUserResponse"/>
+          <include name="getData"/>
         </methods>
-      </class> <!-- UI.tests.AddUserTest -->
+      </class> <!-- Service.apiTest -->
     </classes>
-  </test> <!-- Interview Test(failed) -->
+  </test> <!-- API(failed) -->
 </suite> <!-- Failed suite [UISuite] -->

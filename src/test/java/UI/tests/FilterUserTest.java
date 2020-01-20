@@ -7,9 +7,7 @@ import UI.Pages.UserDetailPage;
 import UI.Pages.UserPageHome;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import sun.tools.tree.NewArrayExpression;
 
 import java.text.DateFormat;
@@ -36,7 +34,7 @@ public class FilterUserTest extends BaseSetUp {
         super();
     } // End of Object
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() throws InterruptedException {
         init();
         addUserPage = new AddUserPage();
@@ -46,7 +44,7 @@ public class FilterUserTest extends BaseSetUp {
 
     } // End of Setup
 
-    @AfterSuite
+    @AfterMethod
     //End the Suite
     public void tearDown() {
         if(null != dr) {
@@ -68,7 +66,7 @@ public class FilterUserTest extends BaseSetUp {
         Reporter.log("Validate User Title");
         userPageHome.validateUserPageLogo();
         Reporter.log("Validate Logo is displayed");
-        userPageHome.UserInfo(pro.getProperty("name"), pro.getProperty("email"),  dsa.format(dt2).toString(), dt1  );
+        userPageHome.UserInfo(pro.getProperty("name"), pro.getProperty("email"),  dt1, dsa.format(dt2).toString());
         Reporter.log("Enter Filter Details and Dates");
         String NewUser = userPageHome.validateResultsUN();
         Assert.assertEquals(NewUser, pro.getProperty("name"));
