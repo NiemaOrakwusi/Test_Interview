@@ -5,7 +5,8 @@
     <classes>
       <class name="Service.apiTest">
         <methods>
-          <include name="PostNewUser"/>
+          <include name="PutUserInfo"/>
+          <include name="tearDown"/>
           <include name="getData"/>
         </methods>
       </class> <!-- Service.apiTest -->

@@ -1,3 +1,11 @@
+/*
+ Author: Dr. Niema C. Orakwusi
+Created: January 18, 2020
+This is a Maven, Testng, Rest Assured Api Testing Framework
+Description : This project will test an api GET, POST, PUT
+as well as from the UI Create a new User and Filter for that user
+
+ */
 package UI.tests;
 
 import UI.BaseObject.BaseSetUp;
@@ -5,19 +13,17 @@ import UI.Pages.AddUserPage;
 import UI.Pages.HomePage;
 import UI.Pages.UserDetailPage;
 import UI.Pages.UserPageHome;
+import Utils.Listeners.Listener;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
-import sun.tools.tree.NewArrayExpression;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
+import static java.lang.Integer.parseInt;
+
+//This test performs a search for the newly created user within the config.properties
+@Listeners(Listener.class)
 public class FilterUserTest extends BaseSetUp {
 
     AddUserPage addUserPage;
@@ -26,7 +32,8 @@ public class FilterUserTest extends BaseSetUp {
     UserDetailPage userDetailPage;
     DateTimeFormatter dsa = DateTimeFormatter.ofPattern("YYYYMMDD");
     String dt1 = "20200115";
-    LocalDate dt2 = LocalDate.now();
+    String dt2 = "20200120";
+    //LocalDate dt2 = 20200120; //LocalDate.now().plusDays(1);
 
 
 
@@ -53,7 +60,7 @@ public class FilterUserTest extends BaseSetUp {
         }
     }
 
-    @Test
+    @Test(description = "Search for New Created User on User Page")
     public void FilterUserTest() {
 
         String titlePageName = homePage.validateHomePageTitle();
@@ -66,7 +73,7 @@ public class FilterUserTest extends BaseSetUp {
         Reporter.log("Validate User Title");
         userPageHome.validateUserPageLogo();
         Reporter.log("Validate Logo is displayed");
-        userPageHome.UserInfo(pro.getProperty("name"), pro.getProperty("email"),  dt1, dsa.format(dt2).toString());
+        userPageHome.UserInfo(pro.getProperty("name"), pro.getProperty("email"),  dt1, dt2); //dsa.format(dt2).toString());
         Reporter.log("Enter Filter Details and Dates");
         String NewUser = userPageHome.validateResultsUN();
         Assert.assertEquals(NewUser, pro.getProperty("name"));

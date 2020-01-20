@@ -1,29 +1,30 @@
+/*
+ Author: Dr. Niema C. Orakwusi
+Created: January 18, 2020
+This is a Maven, Testng, Rest Assured Api Testing Framework
+Description : This project will test an api GET, POST, PUT
+as well as from the UI Create a new User and Filter for that user
+
+ */
 package Service;
 
 import Service.Base.BaseApi;
+import Utils.Listeners.Listener;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
-import io.restassured.specification.RequestSpecification;
-import com.google.gson.JsonObject;
-import org.json.simple.JSONObject;
-import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
 
 
+//This test performs a GET, POST, and PUT Rest Assured API Test
+@Listeners(Listener.class)
 public class apiTest extends BaseApi {
 
     @BeforeMethod
@@ -33,9 +34,14 @@ public class apiTest extends BaseApi {
         RestAssured.port = 3030;
 
     }
+    @AfterMethod
+    //End the Suite
+    public void tearDown() {
+        RestAssured.reset();
 
-    @Test
+    }
 
+    @Test(description = "POST New User into /posts ")
     public void PostNewUser() throws IOException {
         given()
                     .body("{"
@@ -59,35 +65,36 @@ public class apiTest extends BaseApi {
                     .statusCode(201).assertThat();
         Reporter.log("Validated Status Code for POST");
     }
-    @Test
+    @Test(description = "PUT User Info into /comments")
     public void PutUserInfo() {
         given()
+               // .contentType(ContentType.TEXT)
                 .body("{"
-                        + "\'userId\': 1234,"
-                        + "\'id\': 783737,"
-                        + "\'title\': \'Post Updates\',"
-                        + "\'body\': \'Niema's Inserts\'"
+                        + "\'postId\': 12,"
+                        + "\'id\': 53139,"
+                        + "\'name\': est post method - Niema_Test Update,"
+                        + "\'email\': Eliseo@gardner.biz - Niema Test Update,"
                         + "}"
                 )
                 .when().log().ifValidationFails()
-                .request("PUT", "/comments").
+                .request("PUT", "/comments/{id}", 53139).
                 then()
-                .statusCode(201).assertThat();
+                .statusCode(200).assertThat();
         Reporter.log("Validated Status Code for PUT");
      }
-    @Test
+    @Test(description = "GET user from /users")
     public void GetResponse()
     {
-        RestAssured.baseURI = proAPI.getProperty("URL");
-        RequestSpecification httpRequest = RestAssured.given();
-        Response response = httpRequest.get("/users/" + proAPI.getProperty("getId"));
-        ResponseBody body = response.getBody();
-        System.out.println("Response Body is: " + body.asString());
-        String bodyAsString = body.asString();
-        Assert.assertEquals(bodyAsString.contains(proAPI.getProperty("getBody")), true , "Response body contains" + proAPI.getProperty("getBody"));
-        int statCode = response.getStatusCode();
-        Assert.assertEquals(statCode, Integer.parseInt(proAPI.getProperty("getStatusCode")), "Status Code Returned");
-        Reporter.log("Validate GET was Successful with Status Code ");
+
+        given()
+
+                .when().log().ifValidationFails()
+                .get("/users/{userId}",1734)
+                .then()
+                .statusCode(200).assertThat()
+                .body("name", equalTo("Automation Tester"));
+        Reporter.log("Validated Status Code for GET");
+
     }
 
 

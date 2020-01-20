@@ -9,11 +9,12 @@ import UI.Pages.AddUserPage;
 import UI.Pages.HomePage;
 import UI.Pages.UserDetailPage;
 import UI.Pages.UserPageHome;
-import UI.Report.Listener;
+import Utils.Listeners.Listener;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+//This test creates a new user from the config.properties
 @Listeners(Listener.class)
 public class AddUserTest extends BaseSetUp  {
     AddUserPage addUserPage;
@@ -44,7 +45,7 @@ public class AddUserTest extends BaseSetUp  {
         }
     }
 
-    @Test
+    @Test(description = "Add New User to User Page")
     public void AddUserTest() throws InterruptedException {
 
         String titlePageName = homePage.validateHomePageTitle();
