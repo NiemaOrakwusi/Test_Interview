@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation Suite">
-    <suite-files>
-        <suite-file path="apiSuite.xml"></suite-file>
-        <suite-file path="NewUserSuite.xml"></suite-file>
-    </suite-files>
+<suite thread-count="1" verbose="1" name="Automation Suite" annotations="JDK" parallel="tests">
+   <test name="apiTests">
+       <classes>
+           <class name="Service.apiTest"></class>
+       </classes>
+   </test>
+    <test name="UITests">
+        <classes>
+            <class name="UI.tests.AddUserTest"></class>
+            <class name="UI.tests.FilterUserTest"></class>
+        </classes>
+    </test>
+
+  <!--  <suite-files>
+        <suite-file path="src/suites/apiSuite.xml"/>
+        <suite-file path="src/suites/NewUserSuite.xml"/>
+    </suite-files>-->
 </suite> <!-- Suite -->

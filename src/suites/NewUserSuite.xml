@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="UISuite">
+<suite name="UISuite" verbose="1">
     <listeners>
         <listener class-name="Utils.Listeners.AnnotationTransformer"></listener>
         <listener class-name="Utils.Listeners.Listener"></listener>
     </listeners>
-    <test name="API Test Test">
+    <test name="Interview Test">
         <classes>
-            <class name="Service.apiTest"></class>
+            <class name="UI.tests.AddUserTest"></class>
+            <class name="UI.tests.FilterUserTest"></class>
         </classes>
     </test>
 </suite> <!-- Suite -->

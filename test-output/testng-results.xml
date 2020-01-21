@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="6" passed="5">
   <reporter-output>
+    <line>
+      <![CDATA[Validated Status Code for GET]]>
+    </line>
+    <line>
+      <![CDATA[Validated Status Code for POST]]>
+    </line>
+    <line>
+      <![CDATA[Validated Status Code for PUT]]>
+    </line>
+    <line>
+      <![CDATA[Validate Home Title]]>
+    </line>
+    <line>
+      <![CDATA[Click User]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate Logo is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Click New User]]>
+    </line>
+    <line>
+      <![CDATA[Validate Add User Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate Logo is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Enter Info]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Name Detail Title]]>
+    </line>
+    <line>
+      <![CDATA[Validate User Info Panel Name]]>
+    </line>
+    <line>
+      <![CDATA[Validate Email Info Panel Email]]>
+    </line>
     <line>
       <![CDATA[Validate Home Title]]>
     </line>
@@ -23,20 +65,65 @@
       <![CDATA[Validate Email]]>
     </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="31836" started-at="2020-01-20T06:48:24Z" finished-at="2020-01-20T06:48:56Z">
+  <suite name="Automation Suite" duration-ms="45599" started-at="2020-01-21T03:23:04Z" finished-at="2020-01-21T03:23:50Z">
     <groups>
     </groups>
-    <test name="Test_Interview" duration-ms="31836" started-at="2020-01-20T06:48:24Z" finished-at="2020-01-20T06:48:56Z">
-      <class name="UI.tests.FilterUserTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="init" is-config="true" duration-ms="53751" started-at="2020-01-20T06:47:30Z" finished-at="2020-01-20T06:48:24Z">
+    <test name="apiTests" duration-ms="10698" started-at="2020-01-21T03:23:04Z" finished-at="2020-01-21T03:23:15Z">
+      <class name="Service.apiTest">
+        <test-method status="PASS" signature="getData()[pri:0, instance:Service.apiTest@1936f0f5]" name="getData" is-config="true" duration-ms="3197" started-at="2020-01-21T03:23:06Z" finished-at="2020-01-21T03:23:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="setUp" is-config="true" duration-ms="26635" started-at="2020-01-20T06:48:27Z" finished-at="2020-01-20T06:48:53Z">
+        </test-method> <!-- getData -->
+        <test-method status="PASS" signature="GetResponse()[pri:0, instance:Service.apiTest@1936f0f5]" name="GetResponse" duration-ms="4938" started-at="2020-01-21T03:23:09Z" description="GET user from /users" finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Validated Status Code for GET]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GetResponse -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Service.apiTest@1936f0f5]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-01-21T03:23:14Z" finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="getData()[pri:0, instance:Service.apiTest@1936f0f5]" name="getData" is-config="true" duration-ms="1" started-at="2020-01-21T03:23:14Z" finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method status="PASS" signature="PostNewUser()[pri:0, instance:Service.apiTest@1936f0f5]" name="PostNewUser" duration-ms="264" started-at="2020-01-21T03:23:14Z" description="POST New User into /posts " finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Validated Status Code for POST]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- PostNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Service.apiTest@1936f0f5]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-01-21T03:23:14Z" finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="getData()[pri:0, instance:Service.apiTest@1936f0f5]" name="getData" is-config="true" duration-ms="1" started-at="2020-01-21T03:23:14Z" finished-at="2020-01-21T03:23:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method status="PASS" signature="PutUserInfo()[pri:0, instance:Service.apiTest@1936f0f5]" name="PutUserInfo" duration-ms="221" started-at="2020-01-21T03:23:14Z" description="PUT User Info into /comments" finished-at="2020-01-21T03:23:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Validated Status Code for PUT]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- PutUserInfo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Service.apiTest@1936f0f5]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-01-21T03:23:15Z" finished-at="2020-01-21T03:23:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Service.apiTest -->
+    </test> <!-- apiTests -->
+    <test name="UITests" duration-ms="34096" started-at="2020-01-21T03:23:15Z" finished-at="2020-01-21T03:23:50Z">
+      <class name="UI.tests.FilterUserTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:UI.tests.FilterUserTest@77cd7a0]" name="setUp" is-config="true" duration-ms="14198" started-at="2020-01-21T03:23:33Z" finished-at="2020-01-21T03:23:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="FilterUserTest()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="FilterUserTest" duration-ms="2615" started-at="2020-01-20T06:48:53Z" description="Search for New Created User on User Page" finished-at="2020-01-20T06:48:56Z">
+        <test-method status="PASS" signature="FilterUserTest()[pri:0, instance:UI.tests.FilterUserTest@77cd7a0]" name="FilterUserTest" duration-ms="1947" started-at="2020-01-21T03:23:47Z" description="Search for New Created User on User Page" finished-at="2020-01-21T03:23:49Z">
           <reporter-output>
             <line>
               <![CDATA[Validate Home Title]]>
@@ -61,11 +148,62 @@
             </line>
           </reporter-output>
         </test-method> <!-- FilterUserTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:UI.tests.FilterUserTest@61832929]" name="tearDown" is-config="true" duration-ms="107" started-at="2020-01-20T06:48:56Z" finished-at="2020-01-20T06:48:56Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:UI.tests.FilterUserTest@77cd7a0]" name="tearDown" is-config="true" duration-ms="98" started-at="2020-01-21T03:23:49Z" finished-at="2020-01-21T03:23:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- UI.tests.FilterUserTest -->
-    </test> <!-- Test_Interview -->
-  </suite> <!-- Default Suite -->
+      <class name="UI.tests.AddUserTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:UI.tests.AddUserTest@4667ae56]" name="init" is-config="true" duration-ms="16865" started-at="2020-01-21T03:22:47Z" finished-at="2020-01-21T03:23:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:UI.tests.AddUserTest@4667ae56]" name="setUp" is-config="true" duration-ms="14528" started-at="2020-01-21T03:23:17Z" finished-at="2020-01-21T03:23:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="AddUserTest()[pri:0, instance:UI.tests.AddUserTest@4667ae56]" name="AddUserTest" duration-ms="1922" started-at="2020-01-21T03:23:31Z" description="Add New User to User Page" finished-at="2020-01-21T03:23:33Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Validate Home Title]]>
+            </line>
+            <line>
+              <![CDATA[Click User]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate Logo is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Click New User]]>
+            </line>
+            <line>
+              <![CDATA[Validate Add User Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate Logo is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Enter Info]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Name Detail Title]]>
+            </line>
+            <line>
+              <![CDATA[Validate User Info Panel Name]]>
+            </line>
+            <line>
+              <![CDATA[Validate Email Info Panel Email]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddUserTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:UI.tests.AddUserTest@4667ae56]" name="tearDown" is-config="true" duration-ms="98" started-at="2020-01-21T03:23:33Z" finished-at="2020-01-21T03:23:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- UI.tests.AddUserTest -->
+    </test> <!-- UITests -->
+  </suite> <!-- Automation Suite -->
 </testng-results>
